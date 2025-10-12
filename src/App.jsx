@@ -30,8 +30,8 @@ function App() {
     <div className="app">
       <nav className="sidebar">
         <div className="sidebar-header">
-          <h1 className="app-title">DSA Tracker</h1>
-          <p className="app-tagline">Master Your Skills</p>
+          <h1 className="app-title">DSAandChill</h1>
+          <p className="app-tagline">Every time I write nested loops, somewhere a TLE monster laughs at me🐲</p>
         </div>
         <ul className="nav-list">
           {navigation.map(item => (
@@ -56,3 +56,4 @@ function App() {
 }
 
 export default App;
+
