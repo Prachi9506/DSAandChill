@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/yourusername/dsaandchill/main/frontend/public/favicon.svg" width="32" height="32" /> DSA&Chill
+# <img src="https://raw.githubusercontent.com/Prachi9506/DSAandChill/main/frontend/public/favicon.svg" width="32" height="32" /> DSA&Chill
 
 > **Your AI-powered DSA learning system. Sync. Analyze. Crack placements.**
 
@@ -566,7 +566,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ---
 
 <p align="center">
-  <b>Built with ⚡ for the grind · SolveTracker © 2026</b>
+  <b>Built with ⚡ for the grind · DSA&Chill © 2026</b>
   <br/>
   <sub>If this project helped you, consider giving it a ⭐ on GitHub!</sub>
 </p>
