@@ -538,33 +538,6 @@ Please follow the existing code style — ESM imports, functional components, Ta
 
 ---
 
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👨‍💻 Author
-
-<p align="center">
-  <b>Harsh Gupta</b><br/>
-  Full-Stack Developer · DSA Enthusiast · Open Source Contributor
-  <br/><br/>
-  <a href="https://github.com/harshgupta751">
-    <img src="https://img.shields.io/badge/GitHub-harshgupta751-181717?style=for-the-badge&logo=github" />
-  </a>
-  &nbsp;
-  <a href="https://linkedin.com/in/harshachieve100">
-    <img src="https://img.shields.io/badge/LinkedIn-Harsh_Gupta-0077B5?style=for-the-badge&logo=linkedin" />
-  </a>
-  &nbsp;
-  <a href="mailto:harshachieve300@gmail.com">
-    <img src="https://img.shields.io/badge/Email-harshachieve300@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-</p>
-
----
-
 <p align="center">
   <b>Built with ⚡ for the grind · DSA&Chill © 2026</b>
   <br/>
