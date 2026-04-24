@@ -19,8 +19,7 @@
   <!-- Meta badges -->
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
   <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge&logo=github" />
-  <img src="https://img.shields.io/badge/Status-Active-22c55e?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Made%20by-Harsh%20Gupta-FF6B6B?style=for-the-badge" />
+  
 </p>
 
 ---
