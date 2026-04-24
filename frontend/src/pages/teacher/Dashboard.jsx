@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import {
   Users, TrendingUp, BookOpen, BarChart3,
-  ChevronRight, Copy, Check, Search, ArrowUpDown,
-  Trophy, AlertTriangle, Clock, Wifi, WifiOff, Edit, Eye, EyeOff, Plus
+  ChevronRight, Search, ArrowUpDown,
+  Trophy, AlertTriangle, Clock, Wifi, WifiOff, Edit, Eye, EyeOff, Plus, Trash2
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import useAuthStore from '@/store/authStore';
@@ -163,14 +163,7 @@ export default function TeacherDashboard() {
   const [search,    setSearch]    = useState('');
   const [sortBy,    setSortBy]    = useState('totalSolved');
   const [sortDir,   setSortDir]   = useState('desc');
-  const [codeCopied, setCodeCopied] = useState(false);
 
-  const copyClassCode = () => {
-    navigator.clipboard.writeText(user?.myClassCode ?? '');
-    setCodeCopied(true);
-    toast.success('Class code copied!');
-    setTimeout(() => setCodeCopied(false), 2000);
-  };
 
   const toggleSort = (col) => {
     if (sortBy === col) setSortDir(d => d === 'desc' ? 'asc' : 'desc');
@@ -227,22 +220,6 @@ export default function TeacherDashboard() {
             {classData.length} enrolled · {synced.length} synced
           </p>
         </div>
-
-        <motion.button
-          onClick={copyClassCode}
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.97 }}
-          className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-code font-semibold transition-all self-start"
-          style={{
-            background:  'var(--accent-glow)',
-            border:      '1px solid var(--accent)',
-            color:       'var(--accent)',
-          }}
-        >
-          {codeCopied ? <Check size={14} /> : <Copy size={14} />}
-          Class Code: <strong>{user?.myClassCode ?? '—'}</strong>
-          <span className="text-xs opacity-60">(share with students)</span>
-        </motion.button>
       </motion.div>
 
       {/* ── Stat cards ── */}
@@ -346,10 +323,9 @@ export default function TeacherDashboard() {
                   {[
                     { label: '#',     col: null },
                     { label: 'Student', col: null },
-                    { label: 'Split',   col: null },
-                    { label: 'Easy',    col: 'easySolved' },
-                    { label: 'Med',     col: 'mediumSolved' },
-                    { label: 'Hard',    col: 'hardSolved' },
+                    { label: 'E', col: null },
+                    { label: 'M', col: null },
+                    { label: 'H', col: null },
                     { label: 'Total',   col: 'totalSolved' },
                     { label: 'Acc%',    col: 'acceptanceRate' },
                     { label: 'Synced',  col: null },
@@ -402,15 +378,24 @@ export default function TeacherDashboard() {
                           </div>
                         </div>
                       </td>
-                      <td className="py-3 px-4">
-                        <div className="flex justify-center">
-                          <DifficultyDonut easy={item.leetcode?.easySolved} medium={item.leetcode?.mediumSolved} hard={item.leetcode?.hardSolved} size={44} />
-                        </div>
-                      </td>
+{/* Replace the single donut <td> with THREE separate <td> columns: */}
+{[
+  { val: item.leetcode?.easySolved,   color: 'var(--easy)',   label: 'E' },
+  { val: item.leetcode?.mediumSolved, color: 'var(--medium)', label: 'M' },
+  { val: item.leetcode?.hardSolved,   color: 'var(--hard)',   label: 'H' },
+].map(({ val, color, label }) => (
+  <td key={label} className="py-3 px-3 text-center">
+    <div className="flex flex-col items-center" style={{ minWidth: 24 }}>
+      <span className="font-display font-bold text-base" style={{ color }}>
+        {val ?? '—'}
+      </span>
+      <span style={{ fontSize: 9, color: 'var(--text-muted)', fontFamily: 'JetBrains Mono' }}>
+        {label}
+      </span>
+    </div>
+  </td>
+))}
                       {[
-                        { val: item.leetcode?.easySolved,   color: 'var(--easy)'   },
-                        { val: item.leetcode?.mediumSolved, color: 'var(--medium)' },
-                        { val: item.leetcode?.hardSolved,   color: 'var(--hard)'   },
                         { val: item.leetcode?.totalSolved,  color: 'var(--text-primary)' },
                       ].map(({ val, color }, j) => (
                         <td key={j} className="py-3 px-4 text-center">
