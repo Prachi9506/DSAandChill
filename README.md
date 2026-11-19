@@ -535,10 +535,3 @@ Contributions are welcome! If you'd like to improve SolveTracker:
 
 Please follow the existing code style — ESM imports, functional components, Tailwind utility classes with CSS variables for theming.
 
----
-
-<p align="center">
-  <b>Built with ⚡ for the grind · DSA&Chill © 2026</b>
-  <br/>
-  <sub>If this project helped you, consider giving it a ⭐ on GitHub!</sub>
-</p>
